@@ -20,5 +20,12 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('dashboard', )->name('wave.dashboard');
+    Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
+});
+
 // Include Wave Routes
 Wave::routes();

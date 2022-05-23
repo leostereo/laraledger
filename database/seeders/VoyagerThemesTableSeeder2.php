@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class VoyagerThemesTableSeeder extends Seeder
+class VoyagerThemesTableSeeder2 extends Seeder
 {
 
     /**
@@ -31,7 +31,19 @@ class VoyagerThemesTableSeeder extends Seeder
             )
         ));
 
-        
+        \DB::table('themes')->insert(array (
+            1 =>
+            array (
+                'id' => 2,
+                'name' => 'leo Theme',
+                'folder' => 'leo_theme',
+                'active' => 0,
+                'version' => '1.0',
+                'created_at' => '2020-08-23 08:06:45',
+                'updated_at' => '2020-08-23 08:06:45',
+            )
+        ));
+
 
     }
 }

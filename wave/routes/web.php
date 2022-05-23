@@ -33,7 +33,7 @@ Route::post('checkout', '\Wave\Http\Controllers\SubscriptionController@checkout'
 Route::get('test', '\Wave\Http\Controllers\SubscriptionController@test');
 
 Route::group(['middleware' => 'wave'], function () {
-	Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
+#	Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
 });
 
 Route::group(['middleware' => 'auth'], function(){
