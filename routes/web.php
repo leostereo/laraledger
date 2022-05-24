@@ -23,8 +23,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('dashboard', )->name('wave.dashboard');
-    Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
+
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    Route::get('/connection/remove/{id}', 'ConnectionController@action')->name('connection.remove');
+
+
 });
 
 // Include Wave Routes
