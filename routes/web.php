@@ -26,8 +26,21 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-    Route::get('/connection/remove/{id}', 'ConnectionController@action')->name('connection.remove');
+    #CREDENTIALS
+    Route::get('/{agent}/credential/remove/{id}', 'CredentialController@remove')->name('credential.remove');
+    Route::get('/credential/{id}/store', 'CredentialController@store')->name('credential.store');
+    Route::post('/credential/issue', 'CredentialController@issue')->name('credential.issue');
 
+    Route::get('/{agent}/connection/remove/{id}', 'ConnectionController@remove')->name('connection.remove');
+    Route::post('/connection/invitation_create', 'ConnectionController@invitation_create')->name('connection.invitation_create');
+    Route::post('/connection/invitation_receive', 'ConnectionController@invitation_receive')->name('connection.invitation_receive');
+    Route::post('/connection/invitation_accept', 'ConnectionController@invitation_accept')->name('connection.invitation_accept');
+    Route::post('/connection/request_accept', 'ConnectionController@request_accept')->name('connection.request_accept');
+
+    #MESSAGES
+    Route::post('/message/send', 'MessageController@send')->name('message.send');
+
+   
 
 });
 

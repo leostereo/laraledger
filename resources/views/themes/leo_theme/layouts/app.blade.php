@@ -62,8 +62,7 @@
     <main class="flex-grow overflow-x-hidden">
         @yield('content')
     </main>
-
-    @include('theme::partials.footer')
+    
     @include('theme::partials.footer-scripts')
 
 
