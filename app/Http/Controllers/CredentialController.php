@@ -29,7 +29,7 @@ class CredentialController extends Controller
         {
             "auto_remove": true,
             "comment": "string",
-            "connection_id": "35316d4a-4ef1-45a7-b6c9-3a4c7e4b5361",
+            "connection_id": "'.$conn_id.'",
             "credential_preview": {
               "@type": "issue-credential/2.0/credential-preview",
               "attributes": [
@@ -116,19 +116,12 @@ class CredentialController extends Controller
     
     public function store (Request $request){
 
-        
-        $validated = $request->validate([
-
-            'pix' => 'required',
-
-        ]);
 
         $record_id = $request->id;
         $agent = $request->agent;
         
-        $url = 'http://'.$this->ip[$agent].':'.$this->port[$agent].'issue-credential-2.0/records/'.$record_id;
-
-        $response = Http::delete($url, []);
+        $url = 'http://'.$this->ip[$agent].':'.$this->port[$agent].'/issue-credential-2.0/records/'.$record_id.'/store';
+        $response = Http::post($url, []);
 
         if($response->failed()){
 
@@ -142,7 +135,7 @@ class CredentialController extends Controller
         return redirect()->route('dashboard')
         ->with( 'last_op', true )
         ->with( 'result', true )
-        ->with( 'message', 'Record removed OK')
+        ->with( 'message', 'Record stored OK')
         ->with( 'next_oper', false);
     }
 

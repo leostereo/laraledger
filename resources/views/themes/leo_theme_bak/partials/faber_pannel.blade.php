@@ -32,8 +32,6 @@
 	        <div class="flex flex-wrap items-center justify-between p-3 px-3 bg-white border-b border-gray-150 sm:flex-no-wrap">
 
 
-
-
 				<div class="card mt-3 w-100" >
 					<div class="card-header">
 						Connections

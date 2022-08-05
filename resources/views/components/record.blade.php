@@ -4,9 +4,8 @@
                             <div class="row g-0 justify-content-between">
                                 <div class="col">
 
-
                                     @if( $state =='credential-received')
-                                        <a href="{{route('credential.store',['id'=>$record])}}"><i class="bi bi-download text-secondary" title="Store credential"></i></a>
+                                        <a href="{{route('credential.store',['id'=>$record,'agent'=>$agent])}}"><i class="bi bi-download text-secondary" title="Store credential"></i></a>
                                         
                                     @else
                                         <i class="bi bi-check-circle text-success" title="Status done"></i>

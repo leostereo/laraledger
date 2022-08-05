@@ -46,6 +46,7 @@
                 </div>
             </div>
         </div>
+        <a href="#" class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">Support</a>
     </div>
 
 
@@ -56,6 +57,8 @@
                 <span class="px-3 py-1 text-xs text-red-600 bg-red-100 border border-gray-200 rounded-md">You have {{ auth()->user()->daysLeftOnTrial() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your Trial</span>
             </div>
         @endif
+
+        @include('theme::partials.notifications')
 
         <!-- Profile dropdown -->
         <div @click.away="open = false" class="relative flex items-center h-full ml-3" x-data="{ open: false }">
