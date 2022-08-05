@@ -17,30 +17,16 @@
                 <div class="border border-gray-100 shadow-md rounded-xl">
                     <div class="overflow-hidden shadow-xs rounded-xl">
                         <div class="relative z-20 grid gap-6 px-5 py-6 bg-white sm:p-8 sm:gap-8">
-                            <a href="{{ url('docs') }}" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out hover:border-blue-500 hover:border-l-2 rounded-xl hover:bg-gray-100">
+                            
+                            <a href="{{ route('documentation') }}" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out hover:border-blue-500 hover:border-l-2 rounded-xl hover:bg-gray-100">
                                 <p class="text-base font-medium leading-6 text-gray-900">
-                                    Documentation
+                                    Hyper Ledger Demo
                                 </p>
                                 <p class="text-xs leading-5 text-gray-500">
-                                    View The Wave Docs
+                                    View Docs for help
                                 </p>
                             </a>
-                            <a href="https://devdojo.com/course/wave" target="_blank" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-xl hover:bg-gray-100">
-                                <p class="text-base font-medium leading-6 text-gray-900">
-                                    Videos
-                                </p>
-                                <p class="text-xs leading-5 text-gray-500">
-                                    Watch videos to learn how to use Wave.
-                                </p>
-                            </a>
-                            <a href="{{ route('wave.blog') }}" class="block px-5 py-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-xl hover:bg-gray-100">
-                                <p class="text-base font-medium leading-6 text-gray-900">
-                                    From The Blog
-                                </p>
-                                <p class="text-xs leading-5 text-gray-500">
-                                    View your application blog.
-                                </p>
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -76,34 +62,7 @@
                 class="absolute top-0 right-0 w-56 mt-20 origin-top-right transform rounded-xl" x-cloak>
 
                 <div class="bg-white border border-gray-100 shadow-md rounded-xl" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    <a href="{{ route('wave.profile', auth()->user()->username) }}" class="block px-4 py-3 text-gray-700 hover:text-gray-800">
 
-                        <span class="block text-sm font-medium leading-tight truncate">
-                            {{ auth()->user()->name }}
-                        </span>
-                        <span class="text-xs leading-5 text-gray-600">
-                            View Profile
-                        </span>
-                    </a>
-                    @impersonating
-                            <a href="{{ route('impersonate.leave') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 text-blue-900 border-t border-gray-100 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:bg-blue-200">Leave impersonation</a>
-                    @endImpersonating
-                    <div class="border-t border-gray-100"></div>
-                    <div class="py-1">
-
-                        <div class="block px-4 py-1">
-                            <span class="inline-block px-2 my-1 -ml-1 text-xs font-medium leading-5 text-gray-600 bg-gray-200 rounded">{{ auth()->user()->role->display_name }}</span>
-                        </div>
-                        @trial
-                            <a href="{{ route('wave.settings', 'plans') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Upgrade My Account</a>
-                        @endtrial
-                        @if( !auth()->guest() && auth()->user()->can('browse_admin') )
-                            <a href="{{ route('voyager.dashboard') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"><i class="fa fa-bolt"></i> Admin</a>
-                        @endif
-                        <a href="{{ route('wave.profile', auth()->user()->username) }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">My Profile</a>
-                        <a href="{{ route('wave.settings') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">Settings</a>
-
-                    </div>
                     <div class="border-t border-gray-100"></div>
                     <div class="py-1">
                         <a href="{{ route('wave.logout') }}" class="block w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">

@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+    Route::get('documentation', function () {return view('theme::documentation');})->name('documentation');
+
+
     #CREDENTIALS
     Route::get('/{agent}/credential/remove/{id}', 'CredentialController@remove')->name('credential.remove');
     Route::get('/credential/{id}/store', 'CredentialController@store')->name('credential.store');
